@@ -1,0 +1,12 @@
+
+\.vs/
+
+Data\.Models/bin/
+
+Data\.Models/obj/
+
+Data/bin/
+
+Data/obj/
+
+HomeMovies/wwwroot/

@@ -1,0 +1,48 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2"><h3>Filter by:</h3></div>
+            <div class="col-md-4" style="margin-top:20px;">
+                <input type="text" [(ngModel)]=listFilter />
+            </div>
+            <div class="col-md-6" style="margin-top:20px">
+                <a [routerLink]="['/add-movie']" class="pull-right">
+                    <span class='glyphicon glyphicon-plus '></span> Add New Movie
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="table-responsive">
+            <table class="table"
+                   *ngIf="movies && movies.length">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                        <th>Actors</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let movie of filteredMovies; let i =index'>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.genreName}} </td>
+                        <td>
+                            <mv-star [starRatingId]="movie.id + '_str_rating'"
+                                     [ratingValue]="movie.rating"
+                                     (ratingClicked)="onRatingClicked($event, movie)">
+                            </mv-star>
+                        </td>
+                        <td>{{movie.actorList}}</td>
+                        <td><a [routerLink]="['/imdb-info', movie.title]">IMDB Info</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

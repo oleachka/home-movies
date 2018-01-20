@@ -1,0 +1,48 @@
+<div class="rating">
+    <input *ngIf="ratingValue < 5" type="checkbox" id="star5" [name]="starRatingId" value="5" />
+    <input *ngIf="ratingValue >= 5" checked type="checkbox" id="star5" [name]="starRatingId" value="5" />
+    <label (click)="onClick(5)" class="full" for="star5" title="Awesome - 5 stars"></label>
+
+    <input *ngIf="ratingValue < 4.5" type="checkbox" id="star4half" [name]="starRatingId" value="4 and a half" />
+    <input *ngIf="ratingValue >= 4.5" checked type="checkbox" id="star4half" [name]="starRatingId" value="4 and a half" />
+    <label (click)="onClick(4.5)" class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+
+
+    <input *ngIf="ratingValue < 4" type="checkbox" id="star4" [name]="starRatingId" value="4" />
+    <input *ngIf="ratingValue >= 4" checked type="checkbox" id="star4" [name]="starRatingId" value="4" />
+    <label (click)="onClick(4)" class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+    <input *ngIf="ratingValue < 3.5" type="checkbox" id="star3half" [name]="starRatingId" value="3 and a half" />
+    <input *ngIf="ratingValue >= 3.5" checked type="checkbox" id="star3half" [name]="starRatingId" value="3 and a half" />
+    <label (click)="onClick(3.5)" class="half" for="star3half" title="Meh - 3.5 stars"></label>
+
+
+    <input *ngIf="ratingValue < 3" type="checkbox" id="star3" [name]="starRatingId" value="3" />
+    <input *ngIf="ratingValue >= 3" checked type="checkbox" id="star3" [name]="starRatingId" value="3" />
+    <label (click)="onClick(3)" class="full" for="star3" title="Meh - 3 stars"></label>
+
+    <input *ngIf="ratingValue < 2.5" type="checkbox" id="star2half" [name]="starRatingId" value="2 and a half" />
+    <input *ngIf="ratingValue >= 2.5" checked type="checkbox" id="star2half" [name]="starRatingId" value="2 and a half" />
+    <label (click)="onClick(2.5)" class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+
+    <input *ngIf="ratingValue >= 2" checked type="checkbox" id="star2" [name]="starRatingId" value="2" />
+    <input *ngIf="ratingValue < 2" type="checkbox" id="star2" [name]="starRatingId" value="2" />
+    <label (click)="onClick(2)" class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+    <input *ngIf="ratingValue >= 1.5" checked type="checkbox" id="star1half" [name]="starRatingId" value="1 and a half" />
+    <input *ngIf="ratingValue < 1.5" type="checkbox" id="star1half" [name]="starRatingId" value="1 and a half" />
+    <label (click)="onClick(1.5)" class="half" for="star1half" title="Meh - 1.5 stars"></label>
+
+
+    <input *ngIf="ratingValue >= 1"
+           type="checkbox" checked id="star1"
+           [name]="starRatingId" value="1" />    
+    <input *ngIf="ratingValue < 1" type="checkbox" id="star1" [name]="starRatingId" value="1" />
+    <label (click)="onClick(1)" class="full" for="star1" title="1"></label>
+
+    <input *ngIf="ratingValue >= .5" checked type="checkbox" id="starhalf" [name]="starRatingId" value=".5" />
+    <input *ngIf="ratingValue < .5" type="checkbox" id="starhalf" [name]="starRatingId" value=".5" />
+    <label (click)="onClick(.5)" class="half" for="starhalf" title="0.5"></label>
+
+</div>
+

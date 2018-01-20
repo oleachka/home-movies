@@ -1,0 +1,75 @@
+﻿<h1>Movie Details</h1>
+
+<ng-template #alertTemplate>
+    <alert typeof="modal-body sucess">Movie has been added.</alert>
+</ng-template>
+
+
+<form #newMovieForm="ngForm" (ngSubmit)="saveClick()">
+    <div class="container pull-left" style="max-width: 300px">
+        <div class="form-group row">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Title*</span>
+                </div>
+
+                <input [(ngModel)]="movie.title" required #movieTitle="ngModel" 
+                       type="text" class="form-control" name="title" 
+                       aria-label="Title" aria-describedby="inputGroup-sizing-default">
+
+                <div *ngIf="movieTitle.invalid && (movieTitle.dirty || movieTitle.touched)"
+                     class="alert alert-danger">
+                    <div *ngIf="movieTitle.errors.required">
+                        Title is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Genre*</span>
+                </div>       
+                
+                <select [(ngModel)]="movie.genre" required name="genereDropdown"
+                        class="form-control" aria-label="Genre"
+                       aria-describedby="inputGroup-sizing-default">
+                    <option *ngFor="let g of genres" value={{g.id}}>
+                        {{g.name}}
+                    </option>
+                </select>
+
+            
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Rating</span>
+                </div>
+                <mv-star name="rating" [starRatingId]="new_movie_str_rating"
+                         [ratingValue]='movie.rating'
+                         (ratingClicked)="onRatingClicked($event)">
+                </mv-star>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Actors</span>
+                </div>
+                <input [(ngModel)]="movie.actorList"
+                       name="actors"
+                       placeholder="ex: Bill Smith, John Doe, Amy Li"
+                       type="text" class="form-control"
+                       aria-label="Actors" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="input-group mb-3 pull-right">
+                <button class="btn btn-primary" type="submit" [disabled]="!newMovieForm.form.valid">Save</button>
+            </div>
+        </div>
+    </div>
+</form>

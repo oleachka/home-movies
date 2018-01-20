@@ -1,0 +1,32 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        IMDB
+    </div>
+    <div class="panel-body">
+        <alert *ngIf="notFound">Movie not found</alert>
+        <div *ngIf="!notFound" class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                        <th>Actors</th>
+                        <th>Website</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.genreName}} </td>
+                        <td>
+                            {{movie.rating}}
+                        </td>
+                        <td>{{movie.actorList}}</td>
+                        <td>{{movie.plot}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+</div>
