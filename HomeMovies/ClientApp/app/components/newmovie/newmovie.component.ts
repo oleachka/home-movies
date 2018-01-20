@@ -21,6 +21,7 @@ export class NewMovieComponent {
     movie: Movie = new Movie();
     genres: IGenre[];
     private modalRef: BsModalRef;
+    
     @ViewChild('alertTemplate') alertTemplate: TemplateRef<any>;
     constructor(
         private dataService: MovieDataService,

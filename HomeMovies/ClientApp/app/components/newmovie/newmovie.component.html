@@ -48,7 +48,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Rating</span>
                 </div>
-                <mv-star name="rating" [starRatingId]="new_movie_str_rating"
+                <mv-star name="rating" [starRatingId]="'new_movie_str_rating'"
                          [ratingValue]='movie.rating'
                          (ratingClicked)="onRatingClicked($event)">
                 </mv-star>
